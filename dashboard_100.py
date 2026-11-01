@@ -23,7 +23,7 @@ st.markdown(
         --panel-soft: #151f32;
         --border: #263248;
         --text: #e6edf7;
-        --muted: #91a0b7;
+        --muted: #bdc9dc;
         --accent: #55d6be;
     }
 
@@ -75,7 +75,8 @@ st.markdown(
     }
 
     [data-testid="stCaptionContainer"], [data-testid="stMarkdownContainer"] p {
-        color: var(--muted);
+        color: var(--muted) !important;
+        line-height: 1.55;
     }
 
     [data-testid="stMetric"] {
@@ -88,7 +89,7 @@ st.markdown(
 
     [data-testid="stMetricLabel"] p {
         color: var(--muted) !important;
-        font-size: 0.84rem;
+        font-size: 0.9rem;
         font-weight: 550;
     }
 
@@ -155,6 +156,21 @@ st.markdown(
     @media (max-width: 700px) {
         .block-container {
             padding: 1.2rem 1rem 3rem;
+        }
+
+        [data-testid="stCaptionContainer"],
+        [data-testid="stMarkdownContainer"] p,
+        [data-testid="stWidgetLabel"] p {
+            font-size: 1rem !important;
+            line-height: 1.6;
+        }
+
+        [data-testid="stMetricLabel"] p {
+            font-size: 0.95rem;
+        }
+
+        [data-testid="stMetricValue"] {
+            font-size: 1.2rem;
         }
     }
     </style>
