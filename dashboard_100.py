@@ -167,6 +167,10 @@ st.caption(
     "기술지표 100개 + FRED 미국 거시지표 | 통합 점수: 기술 70% · 거시 30% | "
     "분석 점수는 참고용이며 실시간 시세나 투자 수익을 보장하지 않습니다."
 )
+st.session_state.setdefault("ticker_input", "FFIV")
+ticker = st.text_input(
+    "종목 코드 입력 (예: FFIV, TQQQ, AAPL)", key="ticker_input"
+).upper().strip()
 
 
 MAX_ANALYSIS_HISTORY = 20
@@ -224,11 +228,7 @@ st.session_state.setdefault("last_successful_analysis", None)
 
 # 사이드바 설정
 st.sidebar.header("⚙️ 분석 설정")
-st.session_state.setdefault("ticker_input", "FFIV")
 st.session_state.setdefault("period_input", "1y")
-ticker = st.sidebar.text_input(
-    "종목 코드 입력 (예: FFIV, TQQQ, AAPL)", key="ticker_input"
-).upper().strip()
 period = st.sidebar.selectbox(
     "조회 기간", options=SUPPORTED_PERIODS, key="period_input"
 )
