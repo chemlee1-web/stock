@@ -22,8 +22,8 @@ st.markdown(
         --panel: #111a2b;
         --panel-soft: #151f32;
         --border: #263248;
-        --text: #e6edf7;
-        --muted: #bdc9dc;
+        --text: #f8fafc;
+        --muted: #e2e8f0;
         --accent: #55d6be;
     }
 
@@ -31,7 +31,7 @@ st.markdown(
         background:
             radial-gradient(ellipse at 78% -10%, rgba(52, 94, 144, 0.19), transparent 42%),
             var(--page);
-        color: var(--text);
+        color: var(--text) !important;
     }
 
     [data-testid="stHeader"] {
@@ -79,6 +79,11 @@ st.markdown(
         line-height: 1.55;
     }
 
+    [data-testid="stWidgetLabel"] p,
+    [data-testid="stWidgetLabel"] label {
+        color: var(--muted) !important;
+    }
+
     [data-testid="stMetric"] {
         background: linear-gradient(145deg, #141f32, #101827);
         border: 1px solid var(--border);
@@ -94,7 +99,7 @@ st.markdown(
     }
 
     [data-testid="stMetricValue"] {
-        color: var(--text);
+        color: var(--text) !important;
         font-size: clamp(1rem, 1.25vw, 1.25rem);
         font-weight: 680;
     }
